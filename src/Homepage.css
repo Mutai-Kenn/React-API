@@ -1,0 +1,21 @@
+.container {
+  width: 80vw;
+  margin: auto;
+}
+
+.homepage {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+
+.card {
+  display: flex;
+  width: 300px;
+  margin: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 4px;
+}
