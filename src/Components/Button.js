@@ -1,19 +1,19 @@
 import React from "react";
+import { useHistory } from "react-router";
 import './Button.css';
 
-function UserDetails(ev){
-    ev.preventDefault();
-    console.log('Clicked');
-    
+function UserButton(id) {
+    const history = useHistory();
 
-}
-
-function UserButton() {
+    const handleClick = (id) => {
+        history.push(`/User/${id}`)
+    };
+    console.log(id);
     return(
-        
-        <button type="button" className="btn" onClick={UserDetails}>
+        <button type="button" className="btn" onClick={handleClick}>
             <span>More Details</span>
         </button>
+
     );
 }
 

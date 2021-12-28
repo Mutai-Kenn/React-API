@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Card from './Components/Card';
-import Button from './Components/Button';
 import axios from 'axios';
 import './Homepage.css';
+import { Route , Switch} from "react-router-dom";
+import UserDetails from "./Components/UserDetails";
+
 
 function Homepage(){
     const [users, setUsers] = useState([]);
@@ -12,26 +14,22 @@ function Homepage(){
     const res = await axios.get("https://jsonplaceholder.typicode.com/users");
 
     setUsers(res.data)
-        console.log(res); 
+        return res.data;
     }
     getUsers();
 }, [])
 
     return(
         <div className='container'>
-            <div className='homepage'>
-                 {users.map(users => {
-                     return(
-                    <div className="card" key={users.id}>
-                    <Card 
-                    name={users.username } 
-                    email={users.email} 
-                    website={users.website} />   
-                    <Button />
-                    </div>
-                 )})}
+                <Switch>
+                    <Route exact path='/'>
+                        <Card users ={users}/>
+                    </Route>
+                    <Route exact path="/userdetails/:id">
+                        <UserDetails users={users}/>
+                    </Route>
+                </Switch>
             </div>
-        </div>
     );
 }
 
