@@ -10,14 +10,6 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter> 
      <Homepage /> 
-    {/* <Switch> 
-      <Route exact path="/">
-        <Homepage />
-      </Route>
-      <Route path="/User/:id">
-        <User />
-      </Route>
-    </Switch> */}
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

@@ -17,7 +17,6 @@ function Card({users}) {
                     <h3 className="name">{users.name}</h3>
                     <p className="social">{users.email}</p>
                     <a className="link" href="www.bbb.com">{users.website}</a> 
-                    {/* <Button id={users.id}/> */}
                     <Link to = {`/userdetails/${users.id}`}>
                         <button type="button" className="btn">
                             <span>More Details</span>
